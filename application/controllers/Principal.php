@@ -3,8 +3,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Principal extends CI_Controller {
 
-    public function index()
-    {
+    function __construct(){
+        parent::__construct();
+        $this->load->helper('url');
+    }
+
+    public function index(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
         $this->load->view('principal/inicio');
+        $this->load->view('principal/plantillas/pie');
+    }
+
+    public function flujoPrecios(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/flujoPrecios');
+        $this->load->view('principal/plantillas/pie');
+    }
+
+    function generaFlujoPrecio(){
+        $category = array();
+        $dataset = array();
+        for($i=1;$i <= 15;$i++){
+            $category[] = array("label"=>"dia".$i);
+        }
+        $categories[] = array("category"=>$category);
+        for($i=1 ; $i <= 5;$i++){
+            $valore = array();
+            for($j=1;$j<=15;$j++){
+                $valore[]= array("value"=>rand(10,100));
+            }
+            $dataset[] = array("seriesname"=>"producto".$i,"data"=>$valore);
+        }
+        $result = array("categories"=> $categories,"dataset"=>$dataset);
+        echo json_encode($result);
     }
 }
