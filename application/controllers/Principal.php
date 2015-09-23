@@ -22,6 +22,43 @@ class Principal extends CI_Controller {
         $this->load->view('principal/plantillas/pie');
     }
 
+    public function social(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/social');
+        $this->load->view('principal/plantillas/pie');
+    }
+    public function economico(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/economico');
+        $this->load->view('principal/plantillas/pie');
+    }
+    public function geografico(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/geografico');
+        $this->load->view('principal/plantillas/pie');
+    }
+    public function politico(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/politico');
+        $this->load->view('principal/plantillas/pie');
+    }
+    public function militar(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/militar');
+        $this->load->view('principal/plantillas/pie');
+    }
+    public function ambiental(){
+        $this->load->view('principal/plantillas/head');
+        $this->load->view('principal/plantillas/menu');
+        $this->load->view('principal/ambiental');
+        $this->load->view('principal/plantillas/pie');
+    }
+
     function generaFlujoPrecio(){
         $category = array();
         $dataset = array();
